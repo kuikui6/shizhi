@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     span{
+         width: 200px;
+         height: 200px;
+         /* display: block; */
+     }
+ .ff{
+     /* 背景渐变 */
+    background:-webkit-linear-gradient(top,green,red,white);
+    padding-top :20px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    /* dsshed虚线 */
+    border-radius: 50%;
+    /* 圆角 */
+    text-align: center;
+    line-height: 200px;
+    box-shadow: 10px -10px 3px 3px #000;
+    /* 阴影立体感 x轴 y轴 清晰度模糊值 宽度大小  颜色*/
+    
+}
+.d{
+ width: 100px;
+ height: 100px;
+ border:10px  dashed #ccc;
+ padding: 20px; 
+ background: #000;
+ box-sizing: border-box;
+ /* 盒子绝对大小padding border向内 */
+}
+    </style>
+
+</head>
+<body>
+    <!-- <img src="dddd">
+    <span>石家庄职业技术学院</span>
+    <div class="ff">石家庄职业技术学院</div> 
+    <div class="cc">前段培优班</div> -->
+    <div class="d"></div>
+    <button >1</button> 
+    <button >2</button>
+    <button>3</button>
+    <button >4</button>
+</body>
+
+ 
+
+<script type="text/javascript">
+    
+    var oBtns = document.getElementsByTagName('button');
+     console.log(oBtns);
+     for(var i = 0; i < oBtns.length ; i++){
+oBtns[i].onclick = function () {
+alert(this.innerHTML);
+}
+}
+//   }
+// oBtns[0].onclick = function () {
+// alert(1)
+// }
+// oBtns[1].onclick = function () {
+// alert(2)
+// }
+// oBtns[2].onclick = function () {
+// alert(3)
+// }
+// oBtns[3].onclick = function () {
+// alert(4)
+// }
+// 常见的行内元素：span a  em（斜体）i strong加粗
+// 常见的块状元素：div footter p  header inpuit
+// 行内权重最高1000
+// id权重100
+// 类名（class）10
+// 标签选器1
+var a = b = c = d = 12;
+console.log(a == d)
+d = 1;
+console.log(a,b,c,d);
+
+var x=y=z=[1,2,3,4,];
+console.log(x == y)
+z[4]=5;
+//给z添加一项 索引为4项；
+//数组中没有这一项就添加
+console.log(z);
+console.log(x,y,z);
+z=[10,20,30];
+// 只改变z
+console.log(x,y,z);
+
+var str='123.12q123';
+console.log(Number(str));//变成数值型
+// NaN（not a number） null none
+//空字符串 或者 只有空格 那么Number得到的结果得到的都是0；
+console.log(parseInt(str));//变为整型
+//只要第一个字符是非数字那么结果就是NaN 若第一个是数字 则往后查找 查找到非数字时结束
+
+ function sum(a,b,c){
+     console.log(a,b,c);
+     console.log(arguments);
+//arguments实参集合 实际的参数集合
+    var total=0;
+    //    赋初始值  判断条件  累加
+    //for(var i =0 ;i < 4; i++){
+        循环体
+   // }
+     for(var i=0; i < arguments.length; i++){
+     console.log(arguments[i]);
+     total += arguments[i];
+     //total = total+arguments[i];
+}
+return total;
+}
+//  var a = sum(1,2,3,4,5);
+//  console.log(a);
+  var n = 4 % 5 ;
+  if(n >= 2 && n <= 3){
+      console.log(2)
+  }
+  if(n >= 2 || n <= 3){
+      console.log('any number')
+  }
+
+  //布尔数据类型中  有五个是false   其他的全是true      Boolean()
+  // 0  NaN ''  null  undefined
+  //! 代表取反  先把要取反的数据类型转化成布尔型；然后再取反
+  //！！取反后再取反  这个操作效果等同于 Boolean（）转化
+  var  a = 0 || 2;
+  var  b = 0 && 2;
+  //对于&&来说
+  //前面成立给后边；前边不成立给前边
+
+  //对于||来说
+  //前边成立给前边；前边不成立给后边
+  console.log(a,b)
+//== 相对比较   会把两边的数据类型转换成同一种类型再去比较
+//===绝对比较    先看两边是不是同一数据类型；
+              //若不是；则直接就false；若是；则再去比较直是否把两边都转换成数字再去比较；
+  console.log('0' == 0);//把两边都转换成数字再去比较
+  console.log([] == false);//先把 引用数据类型换成字符串  ；再把字符串转换成数字； 然后再去比较
+  console.log(![]  == false);//记住五个为false的这里是空数组
+  //JS中的数据类型划分成两大类
+  //基本的数据类型（值类型）string number boolean null undefined
+  //引用数据类型[]{} function Data Math 正则…
+  //基本数据类型操作的都是一个值；引用数据类型操作的都是一个地址；
+  var name = '小明', age=9;
+  console.log('我的名字是'+name+'我的年龄是'+age);
+  var str = `我的名字是${name}
+  我的年龄是${age}`; 
+  console.log(str);
+  var str2 = '124\'sd'//若想用单引号包含单引号；我们需要用\把字符中的单引号转义
+//var str= 'werwes';控制台看字符串方法打到控制台上
+//undefined
+//str.__proto__
+
+//number 类型 NaN
+NaN==NaN //false 结果永远不相等
+1/'a'
+isNaN(1/'a')
+//判断参数是否是NaN 若是则返回true；否则返回false；
+null == undefined//true
+null=== undefined//false
+
+typeof(1)//查看数据类型用的  返回结果是个字符串
+ var s = typeof typeof 1;
+ console.log(s);
+
+ //boolean
+ //boolean; ! ; !!
+ Number([1])
+
+ var obj = {name:'zf',age :9};
+ console.log(obj.name)
+ //获取属性值的两种方式  一种是打点. 
+ //  另一种是[]，中括号的这种方式一般适用于 属性值是通过变量获取的情况
+
+</script>
